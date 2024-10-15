@@ -1,0 +1,40 @@
+﻿<Window x:Class="BankManagementProject.BankManagementWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BankManagementProject"
+        mc:Ignorable="d"
+        Title="Bank Management" Height="450" Width="800" Closed="Window_Closed_1">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Bank Management" FontSize="30" TextAlignment="Center" FontWeight="Bold"/>
+
+        <Button Grid.Row="1" Content="Add Account" HorizontalAlignment="Left" Margin="10,0,0,0" Height="30" Width="120" Click="Button_Click_1"/>
+
+        <DataGrid Grid.Row="2" FontSize="20" Margin="10,20,10,20" ItemsSource="{Binding Accounts}" 
+                  SelectedItem="{Binding editAccount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Account Number" Binding="{Binding AccountNumber}" />
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Balance" Binding="{Binding Balance}"/>
+                <DataGridTextColumn Header="Type" Binding="{Binding Type}"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}"/>
+                
+                <DataGridTextColumn Header="Address" Binding="{Binding Address}"/>
+                <DataGridCheckBoxColumn Header="Is Active" Binding="{Binding IsActive}" />
+                <DataGridTextColumn Header="Interest Percentage" Binding="{Binding InterestPercentage}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button Grid.Row="3" Content="Edit Account" Width="120" Height="40" HorizontalAlignment="Left" Margin="10,10,0,0" Click="Button_Click_2"/>
+        <Button Grid.Row="3" Content="Deposit" Width="120" Height="40" Margin="130,10,0,0" Click="Button_Click"/>
+        <Button Grid.Row="3" Content="Withdraw" Width="120" Height="40" Margin="555,10,125,0" Click="Button_Click_3"/>
+    </Grid>
+</Window>

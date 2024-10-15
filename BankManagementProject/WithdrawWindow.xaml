@@ -1,0 +1,19 @@
+﻿<Window x:Class="BankManagementProject.WithdrawWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BankManagementProject"
+        mc:Ignorable="d"
+        Title="WithdrawWindow" Height="450" Width="800">
+    <Grid>
+        <TextBlock Text="Account Number:" Margin="10" />
+        <TextBox x:Name="AccountNumberTextBox" Margin="150,10,10,10"/>
+
+        <TextBlock Text="Amount to Withdraw:" Margin="10,61,10,10" />
+        <TextBox x:Name="WithdrawAmountTextBox" Margin="150,50,10,10"/>
+
+        <Button Content="Withdraw" Height="50" Width="100"  Margin="100,351,10,10" Click="WithdrawButton_Click" />
+        <Button Content="Cancel" Height="50" Width="100" Margin="331,351,10,10" Click="CancelButton_Click" />
+    </Grid>
+</Window>
